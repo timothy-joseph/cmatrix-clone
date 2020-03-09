@@ -67,9 +67,12 @@ def update_seq(i):
         sequences[i] = None;
 
 while 1:
-    for i in range(1, w):
-        update_seq(i);
-    time.sleep(t_interval);
-    stdscr.refresh();
+    try:
+        for i in range(1, w):
+            update_seq(i);
+        time.sleep(t_interval);
+        stdscr.refresh();
+    except:
+        break;
 
 nc.endwin();
